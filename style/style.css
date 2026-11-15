@@ -7,7 +7,7 @@
 }
 body{
     background-color: black;
-    background-image: url(/img/background.png);
+    background-image: url(../img/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -93,13 +93,13 @@ h1{
 }
 
 
-.valerius{background-image: url(/img/Valerius/Create_fantasy_RPG_character_por…_240078ce.jpg);}
-.beatrix{background-image: url(/img/Beatrix/beatrix-retrato.jpg);transform: translateY(10px);}
-.aurelia{background-image: url(/img/Aurelia/aurelia-retrato.jpg);transform: translateY(20px);}
-.elyra{background-image: url(/img/Elyra/retrato.jpg);transform: translateY(30px);}
-.kaedron{background-image: url(/img/Kaedron/retrato.jpg);transform: translateY(40px);}
-.kaelynn{background-image: url(/img/Kaelynn/retrato.jpg);transform: translateY(40px);}
-.mordrath{background-image: url(/img/Mordrath/retrato.jpg);transform: translateY(30px);}
-.nox{background-image: url(/img/Nox/retrato.jpg);transform: translateY(20px);}
-.raizen{background-image: url(/img/Raizen/retrato.jpg);transform: translateY(10px);}
-.vespera{background-image: url(/img/Vespera/Fantasy_RPG_character_portrait_c…_b4bbb252.jpg);}
+.valerius{background-image: url(../img/Valerius/Create_fantasy_RPG_character_por…_240078ce.jpg);}
+.beatrix{background-image: url(../img/Beatrix/beatrix-retrato.jpg);transform: translateY(10px);}
+.aurelia{background-image: url(../img/Aurelia/aurelia-retrato.jpg);transform: translateY(20px);}
+.elyra{background-image: url(../img/Elyra/retrato.jpg);transform: translateY(30px);}
+.kaedron{background-image: url(../img/Kaedron/retrato.jpg);transform: translateY(40px);}
+.kaelynn{background-image: url(../img/Kaelynn/retrato.jpg);transform: translateY(40px);}
+.mordrath{background-image: url(../img/Mordrath/retrato.jpg);transform: translateY(30px);}
+.nox{background-image: url(../img/Nox/retrato.jpg);transform: translateY(20px);}
+.raizen{background-image: url(../img/Raizen/retrato.jpg);transform: translateY(10px);}
+.vespera{background-image: url(../img/Vespera/Fantasy_RPG_character_portrait_c…_b4bbb252.jpg);}
