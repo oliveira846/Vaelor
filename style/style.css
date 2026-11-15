@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -6,7 +7,7 @@
 }
 body{
     background-color: black;
-    background-image: url(/img/Fantasy_night_sky_over_Vaelor_a58cbc2b.jpg);
+    background-image: url(/img/Fantasy_night_sky_over_Vaelor_a58cbc2b.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -15,32 +16,73 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;    
     grid-template-rows: 4fr 2fr;
-    gap: 2px;
     height: 100vh;
+
+    font-size: 100%;
 } 
+h1{
+    color: #95c3ea;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 3rem;
+    text-align: center;
+}
 #personagem, #info, #selecao-personagem{
     
 }
 #personagem{
-    background-image: url(/img/Beatrix/beatrix-background.png);
-    background-repeat: no-repeat;
-    background-position: -220% 0%;
+    
     
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 
-
+    
 }
 #personagem img{
-    
+    width: 300px;
+    height: 400px;
 }
 #info{
     
     
 }
 #selecao-personagem{
-    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding-top: 60px;
     
     grid-column: 1 / -1;
+
+    
 }
+.cards-personagens{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 5px;
+    border: 1px solid #906cce;
+
+    background-color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+}
+#info{
+    
+}
+
+
+.valerius{background-image: url(/img/Valerius/Create_fantasy_RPG_character_por…_240078ce.jpg);}
+.beatrix{background-image: url(/img/Beatrix/beatrix-retrato.jpg);transform: translateY(10px);}
+.aurelia{background-image: url(/img/Aurelia/aurelia-retrato.jpg);transform: translateY(20px);}
+.elyra{background-image: url(/img/Elyra/retrato.jpg);transform: translateY(30px);}
+.kaedron{background-image: url(/img/Kaedron/retrato.jpg);transform: translateY(40px);}
+.kaelynn{background-image: url(/img/Kaelynn/retrato.jpg);transform: translateY(40px);}
+.mordrath{background-image: url(/img/Mordrath/retrato.jpg);transform: translateY(30px);}
+.nox{background-image: url(/img/Nox/retrato.jpg);transform: translateY(20px);}
+.raizen{background-image: url(/img/Raizen/retrato.jpg);transform: translateY(10px);}
+.vespera{background-image: url(/img/Vespera/Fantasy_RPG_character_portrait_c…_b4bbb252.jpg);}

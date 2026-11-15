@@ -8,12 +8,36 @@
 </head>
 <body>
     <div id="personagem">
-        <img src="img/Beatrix/beatrix-sprite.png" alt="beatrix sprite" width="300">
+        <div>
+            <img src="img/Beatrix/sprite.png" alt="beatrix sprite" width="300" class="imagem-personagem">
+            <h1 id="nome-personagem">Beatrix</h1>
+        </div>
     </div>
     <div id="info"></div>
-    <div id="selecao-personagem"></div>
+    <div id="selecao-personagem">
+        <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius')"></div>
+        <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix')"></div>
+        <div class="cards-personagens aurelia" onclick="mudarPersonagem('Aurelia')"></div>
+        <div class="cards-personagens elyra" onclick="mudarPersonagem('Elyra')"></div>
+        <div class="cards-personagens kaedron" onclick="mudarPersonagem('Kaedron')"></div>
+        <div class="cards-personagens kaelynn" onclick="mudarPersonagem('Kaelynn')"></div>
+        <div class="cards-personagens mordrath" onclick="mudarPersonagem('Mordrath')"></div>
+        <div class="cards-personagens nox" onclick="mudarPersonagem('Nox')"></div>
+        <div class="cards-personagens raizen" onclick="mudarPersonagem('Raizen')"></div>
+        <div class="cards-personagens vespera" onclick="mudarPersonagem('Vespera')"></div>
+    </div>
 
 
-    <script src="script.js"></script>
+    <script>
+
+        function mudarPersonagem(nome){
+
+            let imagemPersonagem = document.querySelector(".imagem-personagem");
+            let nomePersonagem = document.getElementById('nome-personagem');
+            imagemPersonagem.src = `img/${nome}/sprite.png`;
+            nomePersonagem.innerText = `${nome}`
+        }
+
+    </script>
 </body>
 </html>
