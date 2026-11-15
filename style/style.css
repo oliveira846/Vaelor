@@ -6,5 +6,41 @@
 }
 body{
     background-color: black;
-    color: aliceblue;
+    background-image: url(/img/Fantasy_night_sky_over_Vaelor_a58cbc2b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    grid-template-rows: 4fr 2fr;
+    gap: 2px;
+    height: 100vh;
+} 
+#personagem, #info, #selecao-personagem{
+    
+}
+#personagem{
+    background-image: url(/img/Beatrix/beatrix-background.png);
+    background-repeat: no-repeat;
+    background-position: -220% 0%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+
+}
+#personagem img{
+    
+}
+#info{
+    
+    
+}
+#selecao-personagem{
+    
+    
+    grid-column: 1 / -1;
 }
