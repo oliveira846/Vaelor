@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
-    <title>Document</title>
+    <title>Vaelor</title>
 </head>
 <body>
+    <img src="img/logo.svg" alt="logo do jogo Vaelor" id="logo" width="300px">
     <div id="personagem">
         <div>
-            <img src="img/Beatrix/sprite.png" alt="beatrix sprite" width="300" class="imagem-personagem">
-            <h1 id="nome-personagem">Beatrix</h1>
+            <img src="/img/logo.svg" alt="" width="300" class="imagem-personagem">
+            <h1 id="nome-personagem"></h1>
         </div>
     </div>
     <div id="info"></div>
     <div id="selecao-personagem">
-        <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius')"></div>
-        <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix')"></div>
-        <div class="cards-personagens aurelia" onclick="mudarPersonagem('Aurelia')"></div>
-        <div class="cards-personagens elyra" onclick="mudarPersonagem('Elyra')"></div>
-        <div class="cards-personagens kaedron" onclick="mudarPersonagem('Kaedron')"></div>
-        <div class="cards-personagens kaelynn" onclick="mudarPersonagem('Kaelynn')"></div>
-        <div class="cards-personagens mordrath" onclick="mudarPersonagem('Mordrath')"></div>
-        <div class="cards-personagens nox" onclick="mudarPersonagem('Nox')"></div>
-        <div class="cards-personagens raizen" onclick="mudarPersonagem('Raizen')"></div>
-        <div class="cards-personagens vespera" onclick="mudarPersonagem('Vespera')"></div>
+        <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius', 'blue')"></div>
+        <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix', 'crimson')"></div>
+        <div class="cards-personagens aurelia" onclick="mudarPersonagem('Aurelia', 'cornflowerblue')"></div>
+        <div class="cards-personagens elyra" onclick="mudarPersonagem('Elyra', 'greenyellow')"></div>
+        <div class="cards-personagens kaedron" onclick="mudarPersonagem('Kaedron', 'gray')"></div>
+        <div class="cards-personagens kaelynn" onclick="mudarPersonagem('Kaelynn', 'darkmagenta')"></div>
+        <div class="cards-personagens mordrath" onclick="mudarPersonagem('Mordrath', 'darkgreen')"></div>
+        <div class="cards-personagens nox" onclick="mudarPersonagem('Nox', 'deepskyblue')"></div>
+        <div class="cards-personagens raizen" onclick="mudarPersonagem('Raizen', '#56D7CE')"></div>
+        <div class="cards-personagens vespera" onclick="mudarPersonagem('Vespera', '#D630D5')"></div>
     </div>
 
 
     <script>
 
-        function mudarPersonagem(nome){
+        function mudarPersonagem(nome, cor){
 
             let imagemPersonagem = document.querySelector(".imagem-personagem");
             let nomePersonagem = document.getElementById('nome-personagem');
             imagemPersonagem.src = `img/${nome}/sprite.png`;
-            nomePersonagem.innerText = `${nome}`
+            nomePersonagem.innerText = `${nome}`;
+            imagemPersonagem.style.setProperty('--cor-meio', `${cor}`)
         }
 
     </script>
