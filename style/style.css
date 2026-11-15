@@ -7,6 +7,7 @@
 }
 body{
     background-color: black;
+    color: white;
     background-image: url(../img/background.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,8 +58,31 @@ h1{
     border-radius: 5px;
 }
 #info{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+#posicionamento-info{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#info li{
+    list-style-type: none;
+}
+#info #atributos{
+    display: flex;
+    flex-direction: column;
     
-    
+}
+#info #atributos input{
+    width: 300px;
+}
+.caixa-atributo{
+    display: flex;
+    gap: 10px;
 }
 #selecao-personagem{
     display: flex;

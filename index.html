@@ -14,7 +14,45 @@
             <h1 id="nome-personagem"></h1>
         </div>
     </div>
-    <div id="info"></div>
+    <div id="info">
+        <div id="posicionamento-info">
+            <p> Nome:
+                <span id="nome"></span>
+            </p>
+            <p> Título:
+                <span id="titulo"></span>
+            </p>
+            <p> História:
+                <span id="historia"></span>
+            </p>
+            <div id="atributos">
+                <div class="caixa-atributo">
+                    <input type="range" name="" id="forca" min="1" max="100" disabled>
+                    <span id="forcaNumero"></span>
+                </div>
+                <div class="caixa-atributo">
+                    <input type="range" name="" id="velocidade" disabled>
+                    <span id="velocidadeNumero"></span></div>
+                <div class="caixa-atributo">
+                    <input type="range" name="" id="defesa" disabled>
+                    <span id="defesaNumero"></span>
+                </div>
+                <div class="caixa-atributo">
+                    <input type="range" name="" id="magia" disabled>
+                    <span id="magiaNumero"></span>
+                </div>
+                <div class="caixa-atributo">
+                    <input type="range" name="" id="dificuldade" disabled>
+                    <span id="dificuldadeNumero"></span>
+                </div>
+            </div>
+            <ul>
+                <li id="habilidade1"></li>
+                <li id="habilidade2"></li>
+                <li id="habilidade3"></li>
+            </ul>
+        </div>
+    </div>
     <div id="selecao-personagem">
         <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius', 'blue')"></div>
         <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix', 'crimson')"></div>
@@ -30,29 +68,214 @@
 
 
     <script>
-        const beatrix ={
-            nome: "Beatrix",
-            titulo: "A fúria carmesim",
-            forca: 95,
-            velocidade: 55,
-            defesa: 45,
-            magia: 65,
-            dificuldade: 60
+       const personagens = {
+            Valerius: {
+                nome: "Valerius",
+                titulo: "A Lâmina da Aurora",
+                historia: "Um antigo guerreiro dos Guardiões da Aurora, expulso por se recusar a executar aldeões inocentes. Agora percorre Vaelor em busca da verdade sobre a Grande Ruptura.",
+                forca: 75, 
+                velocidade: 70,
+                defesa: 80,
+                magia: 55, 
+                dificuldade: 25, 
+                habilidades: [
+                    "Corte radiante",
+                    "Égide da Aurora",
+                    "Julgamento celestial"
+                ] 
+            },
+            Beatrix: {
+                nome: "Beatrix",
+                titulo: "A Fúria Carmesim",
+                historia: "Uma mercenária feroz que empunha a gigantesca espada Ravagar. Movida pela vingança, transforma sua própria fúria em chamas devastadoras.",
+                forca: 95,
+                velocidade: 55,
+                defesa: 45,
+                magia: 65,
+                dificuldade: 60,
+                habilidades: [
+                    "Ciclone Carmesim",
+                    "Sangue em Chamas",
+                    "Ruptura Infernal"
+                ]
+            },
+            Aurelia: {
+                nome: "Aurelia",
+                titulo: "A Herdeira do Inverno",
+                historia: "Herdeira da família real de Iskaria, Aurelia domina a magia glacial através de seu cajado Glaciem. Seu destino está ligado aos segredos de seu reino.",
+                forca: 35,
+                velocidade: 45,
+                defesa: 65,
+                magia: 100,
+                dificuldade: 80,
+                habilidades: [
+                    "Lanças Glaciais",
+                    "Prisão de Cristal",
+                    "Inverno Absoluto"
+                ]
+            },
+            Elyra: {
+                nome: "Elyra",
+                titulo: "A Voz da Floresta",
+                historia: "Uma arqueira élfica que protege a Floresta de Elaris. Com seu arco mágico Sylvaris, enfrenta a corrupção que ameaça destruir a natureza.",
+                forca: 45,
+                velocidade: 85,
+                defesa: 40,
+                magia: 90,
+                dificuldade: 70,
+                habilidades: [
+                    "Rajada Esmeralda",
+                    "Raízes Ancestrais",
+                    "Chuva da Primeira Raiz"
+                ]
+            },
+            Kaedron: {
+                nome: "Kaedron",
+                titulo: "O Guardião do Tempo",
+                historia: "Uma gigantesca máquina ancestral vinda de um futuro devastado. Seu núcleo de energia permite manipular o tempo e abrir portais entre diferentes realidades.",
+                forca: 90,
+                velocidade: 35,
+                defesa: 100,
+                magia: 70,
+                dificuldade: 75,
+                habilidades: [
+                    "Impacto Temporal",
+                    "Estase Absoluta",
+                    "Ruptura Cronológica"
+                ]
+            },
+
+            Kaelynn: {
+                nome: "Kaelynn",
+                titulo: "O Espectro do Eclipse",
+                historia: "Uma assassina da Ordem do Eclipse que domina as sombras e empunha as adagas Véspera e Ocaso. Sua lealdade esconde conflitos e segredos.",
+                forca: 60,
+                velocidade: 95,
+                defesa: 30,
+                magia: 80,
+                dificuldade: 85,
+                habilidades: [
+                    "Passo Sombrio",
+                    "Reflexos do Eclipse",
+                    "Noite Eterna"
+                ]
+            },
+
+            Mordrath: {
+                nome: "Mordrath",
+                titulo: "O Alquimista da Ruína",
+                historia: "Um alquimista monstruosamente transformado por seus próprios experimentos. Seu corpo deformado carrega substâncias tóxicas e um poder químico devastador.",
+                forca: 95,
+                velocidade: 20,
+                defesa: 90,
+                magia: 75,
+                dificuldade: 65,
+                habilidades: [
+                    "Dilúvio Tóxico",
+                    "Mutação Instável",
+                    "Cataclismo Alquímico"
+                ]
+            },
+
+            Nox: {
+                nome: "Nox",
+                titulo: "O Arauto dos Espíritos",
+                historia: "Um misterioso invocador que utiliza uma lanterna ancestral para se comunicar com espíritos. Seu maior aliado é um gigantesco lobo espectral de energia azul.",
+                forca: 40,
+                velocidade: 60,
+                defesa: 45,
+                magia: 95,
+                dificuldade: 90,
+                habilidades: [
+                    "Chamado Espectral",
+                    "Vínculo das Almas",
+                    "Uivo do Além"
+                ]
+            },
+
+            Raizen: {
+                nome: "Raizen",
+                titulo: "O Punho do Trovão",
+                historia: "Um mestre das artes marciais do Mosteiro de Theryn. Canaliza relâmpagos através dos próprios punhos e busca aperfeiçoar seu domínio da energia celestial.",
+                forca: 80,
+                velocidade: 90,
+                defesa: 55,
+                magia: 65,
+                dificuldade: 75,
+                habilidades: [
+                    "Punhos da Tempestade",
+                    "Reflexo Celestial",
+                    "Ascensão do Dragão Celestial"
+                ]
+            },
+
+            Vespera: {
+                nome: "Vespera",
+                titulo: "A Dançarina do Caos",
+                historia: "Uma combatente imprevisível que transforma batalhas em espetáculos perigosos. Sua foice presa a uma corrente canaliza uma energia mágica de coloração magenta.",
+                forca: 70,
+                velocidade: 95,
+                defesa: 35,
+                magia: 80,
+                dificuldade: 85,
+                habilidades: [
+                    "Dança das Correntes",
+                    "Espiral do Caos",
+                    "Eclipse Carmesim"
+                ]
+            }
         }
+        
+       
 
-        console.log(beatrix.nome)
-        console.log(beatrix.titulo)
-        console.log(beatrix.forca)
-
-        function mudarPersonagem(nome, cor){
-
+        function mudarPersonagem(nomes, cor){
+            let displayCaixa = document.querySelector("#posicionamento-info")
+            let nomePersonagemInfo = document.getElementById("nome")
+            let tituloPersonagemInfo = document.getElementById("titulo")
+            let historiaPersonagemInfo = document.getElementById("historia")
+            let habilidade1 = document.getElementById("habilidade1")
+            let habilidade2 = document.getElementById("habilidade2")
+            let habilidade3 = document.getElementById("habilidade3")
+            let forca = document.getElementById("forca")
+            let velocidade = document.getElementById("velocidade")
+            let defesa = document.getElementById("defesa")
+            let magia = document.getElementById("magia")
+            let dificuldade = document.getElementById("dificuldade")
             let imagemPersonagem = document.querySelector(".imagem-personagem");
             let nomePersonagem = document.getElementById('nome-personagem');
-            imagemPersonagem.src = `img/${nome}/sprite.png`;
-            nomePersonagem.innerText = `${nome}`;
+            imagemPersonagem.src = `img/${nomes}/sprite.png`;
+            nomePersonagem.innerText = `${nomes}`;
             imagemPersonagem.style.setProperty('--cor-meio', `${cor}`)
+
+            displayCaixa.style.display = "flex"
+
+            nomePersonagemInfo.textContent = personagens[nomes].nome
+            tituloPersonagemInfo.textContent = personagens[nomes].titulo
+            historiaPersonagemInfo.textContent = personagens[nomes].historia
+            habilidade1.textContent = personagens[nomes].habilidades[0]
+            habilidade2.textContent = personagens[nomes].habilidades[1]
+            habilidade3.textContent = personagens[nomes].habilidades[2]
+            forca.value = personagens[nomes].forca
+            velocidade.value = personagens[nomes].velocidade
+            magia.value = personagens[nomes].magia
+            dificuldade.value = personagens[nomes].dificuldade
+            defesa.value = personagens[nomes].defesa
+
+            let forcaNumero = document.getElementById("forcaNumero")
+            let velocidadeNumero = document.getElementById("velocidadeNumero")
+            let defesaNumero = document.getElementById("defesaNumero")
+            let magiaNumero = document.getElementById("magiaNumero")
+            let dificuldadeNumero = document.getElementById("dificuldadeNumero")
+
+            forcaNumero.textContent = forca.value
+            velocidadeNumero.textContent = velocidade.value
+            magiaNumero.textContent = magia.value
+            dificuldadeNumero.textContent = dificuldade.value
+            defesaNumero.textContent = defesa.value
+
         }
 
+        
         
     </script>
 </body>
