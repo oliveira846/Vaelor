@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -50,6 +51,10 @@ h1{
     background-image: linear-gradient(0deg, var(--cor-meio), transparent 30%);
 
     border-radius: 5px;
+
+    animation: brilho 2s ease-in-out infinite;
+
+    --cor-efeito: #D1C093;
 }
 #info{
     display: flex;
@@ -133,6 +138,16 @@ h1{
     
 }
 
+
+@keyframes brilho {
+    0%, 100% {
+        filter: drop-shadow(0 0 3px var(--cor-efeito));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 18px var(--cor-efeito));
+    }
+}
 
 .valerius{background-image: url(../img/Valerius/Create_fantasy_RPG_character_por…_240078ce.jpg);}
 .beatrix{background-image: url(../img/Beatrix/beatrix-retrato.jpg);transform: translateY(10px);}
