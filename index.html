@@ -61,16 +61,16 @@
         </div>
     </div>
     <div id="selecao-personagem">
-        <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius', 'blue')"></div>
-        <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix', 'crimson')"></div>
-        <div class="cards-personagens aurelia" onclick="mudarPersonagem('Aurelia', 'cornflowerblue')"></div>
-        <div class="cards-personagens elyra" onclick="mudarPersonagem('Elyra', 'greenyellow')"></div>
-        <div class="cards-personagens kaedron" onclick="mudarPersonagem('Kaedron', 'gray')"></div>
-        <div class="cards-personagens kaelynn" onclick="mudarPersonagem('Kaelynn', 'darkmagenta')"></div>
-        <div class="cards-personagens mordrath" onclick="mudarPersonagem('Mordrath', 'darkgreen')"></div>
-        <div class="cards-personagens nox" onclick="mudarPersonagem('Nox', 'deepskyblue')"></div>
-        <div class="cards-personagens raizen" onclick="mudarPersonagem('Raizen', '#56D7CE')"></div>
-        <div class="cards-personagens vespera" onclick="mudarPersonagem('Vespera', '#D630D5')"></div>
+        <div class="cards-personagens valerius" onclick="mudarPersonagem('Valerius', 'blue', this)"></div>
+        <div class="cards-personagens beatrix" onclick="mudarPersonagem('Beatrix', 'crimson', this)"></div>
+        <div class="cards-personagens aurelia" onclick="mudarPersonagem('Aurelia', 'cornflowerblue', this)"></div>
+        <div class="cards-personagens elyra" onclick="mudarPersonagem('Elyra', 'greenyellow', this)"></div>
+        <div class="cards-personagens kaedron" onclick="mudarPersonagem('Kaedron', 'gray', this)"></div>
+        <div class="cards-personagens kaelynn" onclick="mudarPersonagem('Kaelynn', 'darkmagenta', this)"></div>
+        <div class="cards-personagens mordrath" onclick="mudarPersonagem('Mordrath', 'darkgreen', this)"></div>
+        <div class="cards-personagens nox" onclick="mudarPersonagem('Nox', 'deepskyblue', this)"></div>
+        <div class="cards-personagens raizen" onclick="mudarPersonagem('Raizen', '#56D7CE', this)"></div>
+        <div class="cards-personagens vespera" onclick="mudarPersonagem('Vespera', '#D630D5', this)"></div>
     </div>
 
 
@@ -235,10 +235,7 @@
         
        
 
-        function mudarPersonagem(nomes, cor){
-            
-
-
+        function mudarPersonagem(nomes, cor, card){
             let corBorda = document.getElementById("posicionamento-info")
             let displayCaixa = document.querySelector("#posicionamento-info")
             let nomePersonagemInfo = document.getElementById("nome")
@@ -254,6 +251,7 @@
             let dificuldade = document.getElementById("dificuldade")
             let imagemPersonagem = document.querySelector(".imagem-personagem");
             let nomePersonagem = document.getElementById('nome-personagem');
+            let cardsSelecionados = document.querySelectorAll(".cards-personagens")
             imagemPersonagem.src = `img/${nomes}/sprite.png`;
             nomePersonagem.innerText = `${nomes}`;
             imagemPersonagem.style.setProperty('--cor-meio', `${cor}`)
@@ -285,10 +283,16 @@
             dificuldadeNumero.textContent = dificuldade.value
             defesaNumero.textContent = defesa.value
 
-        }
+            cardsSelecionados.forEach(function(card) {
+                card.classList.remove("selecionado");
+            });
 
+            card.classList.add("selecionado");
+
+} 
         
         
+
     </script>
 </body>
 </html>
