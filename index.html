@@ -251,6 +251,7 @@
             let dificuldade = document.getElementById("dificuldade")
             let imagemPersonagem = document.querySelector(".imagem-personagem");
             let nomePersonagem = document.getElementById('nome-personagem');
+            let imagemFundo = document.body;
             let cardsSelecionados = document.querySelectorAll(".cards-personagens")
             imagemPersonagem.src = `img/${nomes}/sprite.png`;
             nomePersonagem.innerText = `${nomes}`;
@@ -258,7 +259,7 @@
             corBorda.style.borderTop = `4px solid ${cor}`
 
             displayCaixa.style.display = "flex"
-
+            imagemFundo.style.backgroundImage.url = `../img/${nomes}/fundo.jpg`
             nomePersonagemInfo.textContent = personagens[nomes].nome
             tituloPersonagemInfo.textContent = personagens[nomes].titulo
             historiaPersonagemInfo.textContent = personagens[nomes].historia
