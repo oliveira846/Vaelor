@@ -7,7 +7,7 @@
     <title>Vaelor</title>
 </head>
 <body>
-    <img src="img/logo.svg" alt="logo do jogo Vaelor" id="logo" width="300px">
+    <img src="img/logo.svg" alt="logo do jogo Vaelor" id="logo" width="200px">
     <div id="personagem">
         <div>
             <img src="img/logo.svg" alt="" width="300" class="imagem-personagem">
@@ -16,37 +16,44 @@
     </div>
     <div id="info">
         <div id="posicionamento-info">
-            <p> Nome:
+            <p class="cor-letras-info"> Nome:
                 <span id="nome"></span>
             </p>
-            <p> Título:
+            <p class="cor-letras-info"> Título:
                 <span id="titulo"></span>
             </p>
-            <p> História:
+            <p class="cor-letras-info"> História:
                 <span id="historia"></span>
             </p>
             <div id="atributos">
                 <div class="caixa-atributo">
+                    <p class="cor-letras-info">Força</p>
                     <input type="range" name="" id="forca" min="1" max="100" disabled>
                     <span id="forcaNumero"></span>
                 </div>
                 <div class="caixa-atributo">
+                    <p class="cor-letras-info">Velocidade</p>
                     <input type="range" name="" id="velocidade" disabled>
                     <span id="velocidadeNumero"></span></div>
                 <div class="caixa-atributo">
+                    <p class="cor-letras-info">Defesa</p>
                     <input type="range" name="" id="defesa" disabled>
                     <span id="defesaNumero"></span>
                 </div>
                 <div class="caixa-atributo">
+                    <p class="cor-letras-info">Magia</p>
                     <input type="range" name="" id="magia" disabled>
                     <span id="magiaNumero"></span>
                 </div>
                 <div class="caixa-atributo">
+                    <p class="cor-letras-info">Dificuldade</p>
                     <input type="range" name="" id="dificuldade" disabled>
                     <span id="dificuldadeNumero"></span>
                 </div>
             </div>
+            
             <ul>
+                <p class="cor-letras-info">Habilidades</p>
                 <li id="habilidade1"></li>
                 <li id="habilidade2"></li>
                 <li id="habilidade3"></li>
@@ -229,6 +236,10 @@
        
 
         function mudarPersonagem(nomes, cor){
+            
+
+
+            let corBorda = document.getElementById("posicionamento-info")
             let displayCaixa = document.querySelector("#posicionamento-info")
             let nomePersonagemInfo = document.getElementById("nome")
             let tituloPersonagemInfo = document.getElementById("titulo")
@@ -246,6 +257,7 @@
             imagemPersonagem.src = `img/${nomes}/sprite.png`;
             nomePersonagem.innerText = `${nomes}`;
             imagemPersonagem.style.setProperty('--cor-meio', `${cor}`)
+            corBorda.style.borderTop = `4px solid ${cor}`
 
             displayCaixa.style.display = "flex"
 
